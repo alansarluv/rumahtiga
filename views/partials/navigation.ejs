@@ -1,0 +1,22 @@
+<div class="container-fluid navbar-header">
+  <div class="navbar-logo d-none d-sm-inline-block">
+    <a href="/">
+      <img src="../images/logo.jpg" alt="logo">
+    </a>
+  </div>
+  <ul class="navbar-list-menu">
+    <% if (!isAuthenticated) { %>
+      <li>
+        <a class="<%= path === '/login' ? 'active' : '' %>" href="/login">Login</a>
+      </li>
+    <% } else { %>
+      <li class="d-none d-sm-inline-block"><span class="welcome-title">Welcome name</span></li>
+      <li>
+				<form action="/logout" method="post">
+					<input type="hidden" name="_csrf" value="<%= csrfToken %>">
+					<button class="btn btn-link" type="submit">Logout</button>
+				</form>
+      </li>
+    <% } %>
+  </ul>
+</div>
