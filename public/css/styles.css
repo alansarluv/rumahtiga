@@ -1,0 +1,306 @@
+body {
+  background-color: transparent;
+  margin: 0;
+}
+
+.bg-gradien {
+  background-color: #e4e9fd;
+  background-image: -webkit-linear-gradient(65deg, #ffdcc4 50%, #fbffe8 50%);
+  height: 100vh;
+}
+
+/* ===================== ========================= */
+/* ================ Wrapper ================ */
+/* ===================== ========================= */
+
+.wrapper-center {
+  width: 100%;
+  margin: 10% auto;
+  font-family: sans-serif;
+}
+
+.wrapper-center.is-small {
+  max-width: 400px;
+}
+
+.wrapper-center.is-medium {
+  max-width: 800px;
+}
+
+.wrapper-center.is-large {
+  max-width: 1200px;
+}
+
+.wrapper-fluid {
+  margin: 80px 0;
+  padding: 0 50px;
+  display: flex;
+}
+
+.wrapper-fluid .content {
+  width: calc(100% - 190px);
+  height: calc(100vh - 150px);
+  padding: 10px 30px;
+  overflow: auto;
+}
+
+.wrapper-fluid .content h1 {
+  margin-top: 0;
+}
+
+
+/* ===================== ========================= */
+/* ================    FOOTER    ================ */
+/* ===================== ========================= */
+
+footer {
+	text-align: center;
+	color: #383838;
+	font-size: 12px;
+	font-family: monospace;
+  position: fixed;
+  padding: 10px 0;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+}
+
+footer:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  opacity: .8;
+  z-index: -1;  
+}
+
+/* ===================== ========================= */
+/* ================ NAVBAR HEADER ================ */
+/* ===================== ========================= */
+
+.navbar-header {
+  width: 100%;
+  height: 80px;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+.navbar-header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  opacity: .8;
+  z-index: -1;
+}
+
+.navbar-header .navbar-logo {
+  display: inline-block;
+  width: auto;
+  height: 68px;
+  max-width: 150px;
+  margin: 6px;
+  overflow: hidden;
+  box-sizing: border-box;
+  border-radius: 3px;  
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-header .navbar-logo img {
+  background-color: white;
+  height: 100%;
+  width: auto;
+  padding: 0 15px;
+}
+
+.navbar-header ul.navbar-list-menu {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  float: right;  
+}
+
+.navbar-header ul.navbar-list-menu li {
+  display: inline-block;
+  height: 100%;
+  list-style-type: none;
+  position: relative;
+  margin-left: 5px;
+}
+
+.navbar-header ul.navbar-list-menu li:last-child {
+  margin-right: 0;
+}
+
+.navbar-header ul.navbar-list-menu li a {
+  padding: 12px 16px;
+  display: inline-block;
+  text-decoration: none;
+  color: #676262;
+  font-family: sans-serif;
+  position: relative;
+  top: 50%;
+  border-bottom: 0px solid #e89963;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  transition: all .3s;
+  -moz-transition: all .3s;
+  -webkit-transition: all .3s;
+}
+
+.navbar-header ul.navbar-list-menu li a:hover {
+  border-bottom: 3px solid #e89963;
+}
+
+.navbar-header ul.navbar-list-menu li span {
+  padding: 12px 16px;
+  display: inline-block;
+  text-decoration: none;
+  color: #676262;
+  font-family: sans-serif;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+}
+/* ===================== ========================= */
+/* ===============    ATEC Form    =============== */
+/* ===================== ========================= */
+
+.atec-form-style .form-title {
+  font-size: 22px;
+  line-height: 22px;
+  font-weight: bold;
+}
+
+.atec-form-style ol {
+  margin: 0;
+  padding-left: 15px;
+}
+
+.atec-form-style ol li {
+  margin-bottom: 20px;
+  padding: 0;
+}
+
+.atec-form-style ol li.is-error {
+  color: red;
+}
+
+
+.atec-form-style ol li label {
+  background-color: #776e6e;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin-right: 25px;
+  cursor: pointer;  
+}
+
+.atec-form-style ol li label.is-selected {
+  background-color: #5b8bc5;
+}
+
+.atec-form-style ol li input {
+  display: none;
+}
+
+/* ===================== ========================= */
+/* ================ Other Components ================ */
+/* ===================== ========================= */
+.center-block-elm {
+  width: 30%;
+  max-width: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.scrollable-box {
+  padding: 15px;
+  background-color: seashell;
+  max-height: calc(100vh - 200px);
+  overflow: auto;
+  box-shadow: 5px 8px 20px 0px rgba(33,33,33,.3);
+  -webkit-box-shadow: 5px 8px 20px 0px rgba(33,33,33,.3);
+  -moz-box-shadow: 5px 8px 20px 0px rgba(33,33,33,.3);
+}
+
+.btn {
+  border-radius: 4px;
+  padding: 8px 12px;
+  text-decoration: none;
+}
+
+.btn-dark {
+  background-color: #504b45;
+  color: white;
+}
+
+.btn-light {
+  color: #212121;
+  background-color: azure;
+}
+
+.error-message {
+  font-size: 12px;
+  color: red;
+}
+
+select.is-error {
+  border: 2px solid red;
+}
+
+body.modal-backdrop-custom:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,.5);
+  z-index: 9;
+}
+
+.modal-dialog-wrapper {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+.modal-dialog-wrapper .modal-footer {
+  padding-top: 0;
+  border: none;
+  display: block;  
+}
+
+/* utilities */
+hr.separator {border-top-width: 10px; border-style: dotted;}
+.tc { text-align : center; }
+.min100vh { min-height: 100vh; }
+.mt15 { margin-top: 15px; }
+.mt-100 { margin-top: 100px; }
+.my-100 { margin-top: 100px; margin-bottom: 100px; }
+.my15 { margin-top: 15px; margin-bottom: 15px; }
+.m0 { margin: 0; }
+.mr5 { margin-right: 5px; }
+.mb5 { margin-bottom: 5px; }
+.mb15 { margin-bottom: 15px; }
