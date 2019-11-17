@@ -10,11 +10,11 @@
         <a class="<%= path === '/login' ? 'active' : '' %>" href="/login">Login</a>
       </li>
     <% } else { %>
-      <li class="d-none d-sm-inline-block"><span class="welcome-title">Welcome name</span></li>
+      <li class="d-none d-sm-inline-block"><span class="welcome-title">Welcome <%= userName.split('@')[0] %> </span></li>
       <li>
 				<form action="/logout" method="post">
 					<input type="hidden" name="_csrf" value="<%= csrfToken %>">
-					<button class="btn btn-link" type="submit">Logout</button>
+					<button class="btn btn-link p-0" type="submit">Logout</button>
 				</form>
       </li>
     <% } %>

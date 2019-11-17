@@ -4,3 +4,10 @@ exports.get404 = (req, res, next) => {
     path: '/404'
   });
 }
+
+exports.dashboard = (req, res, next) => {
+  res.render('dashboard', { 
+    pageTitle: 'Dashboard',
+    path: '/'
+  });
+}

@@ -1,6 +1,7 @@
 exports.getIndex = (req, res, next) => {
   res.render('atec/index', {
-      pageTitle: 'Shop',
-      path: '/'
+      pageTitle: 'Atec',
+      path: '/',
+      userName: req.user.email
     });
   }

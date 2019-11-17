@@ -9,7 +9,7 @@ const MongoDBStore = require('connect-mongodb-session')(session);
 const csrf = require('csurf');
 const flash = require('connect-flash');
 
-const errorController = require('./controllers/error');
+const generalController = require('./controllers/general');
 const User = require('./models/user');
 
 const app = express();
@@ -25,6 +25,7 @@ app.set('views', 'views');
 
 const atecRoutes = require('./routes/atec');
 const authRoutes = require('./routes/auth');
+const generalRoutes = require('./routes/general');
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -59,8 +60,9 @@ app.use((req, res, next) => {
 
 app.use(atecRoutes);
 app.use(authRoutes);
+app.use(generalRoutes);
 
-app.use(errorController.get404);
+app.use(generalController.get404);
 
 mongoose.connect(process.env.DB_DETAIL)
   .then(result => {

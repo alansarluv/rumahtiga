@@ -177,6 +177,18 @@ footer:after {
   -webkit-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
 }
+
+.navbar-header ul.navbar-list-menu li form {
+  padding: 12px 16px;
+  display: inline-block;
+  font-family: sans-serif;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);  
+}
+
 /* ===================== ========================= */
 /* ===============    ATEC Form    =============== */
 /* ===================== ========================= */
