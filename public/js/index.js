@@ -115,25 +115,6 @@ const nextFormValidate = () => {
   if (submitAllform) submitValidate(submitAllform);
 }
 
-const btnLoginRegister = () => {
-  const btnToLogin = document.getElementsByClassName("goto-login");
-  const btnToRegister = document.getElementsByClassName("goto-register");
-  if (btnToLogin[0]) {
-    btnToLogin[0].addEventListener('click', function(){
-      const formLogin = document.querySelector("form.is-login-form");
-      formLogin.classList.remove("d-none");
-      this.closest("form").classList.add("d-none");
-    });
-  }
-  if (btnToRegister[0]) {
-    btnToRegister[0].addEventListener('click', function(){
-      const formRegister = document.querySelector("form.is-register-form");
-      formRegister.classList.remove("d-none");
-      this.closest("form").classList.add("d-none");
-    });
-  }
-}
-
 const convertMonth = () => {
   const elToConvert = document.getElementsByClassName('jc-convert-month');
   const month = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
