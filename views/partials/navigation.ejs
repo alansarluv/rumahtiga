@@ -10,7 +10,9 @@
         <a class="<%= path === '/login' ? 'active' : '' %>" href="/login">Login</a>
       </li>
     <% } else { %>
-      <li class="d-none d-sm-inline-block"><span class="welcome-title">Welcome <%= userName.split('@')[0] %> </span></li>
+      <% if (userEmail) { %>
+        <li class="d-none d-sm-inline-block"><span class="welcome-title">Welcome <%= userEmail.split('@')[0] %> </span></li>
+      <% } %>
       <li>
 				<form action="/logout" method="post">
 					<input type="hidden" name="_csrf" value="<%= csrfToken %>">

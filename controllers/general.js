@@ -8,6 +8,7 @@ exports.get404 = (req, res, next) => {
 exports.dashboard = (req, res, next) => {
   res.render('dashboard', { 
     pageTitle: 'Dashboard',
-    path: '/'
+    path: '/',
+    userEmail: null
   });
 }

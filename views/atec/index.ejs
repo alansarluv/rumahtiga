@@ -3,12 +3,29 @@
 <body>
 	<%- include('../partials/navigation.ejs') %>
 	<main>
-		<div class="container">
-			<div class="row min100vh align-items-center justify-content-md-center">
-				<div class="col col-md-6 col-lg-4">
-					<h1>Mihaaa</h1>
+		<div class="wrapper-center is-large">
+			<div class="container-fluid mt-100">
+				<div class="row">
+					<div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+						<div class="card">
+							<div class="card-body">
+								<h5 class="card-title">Mengisi ATEC</h5>
+								<p class="card-text">Silahkan klik tombol dibawah ini untuk mengisi ATEC (laporan bulanan) untuk melihat perkembangan ananda tercinta.</p>
+								<a href="/atec/form" class="btn btn-primary">Mengisi Atec</a>
+							</div>
+						</div>          
+					</div>
+					<div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+						<div class="card">
+							<div class="card-body">
+								<h5 class="card-title">Laporan ATEC Bulanan</h5>
+								<p class="card-text">Silahkan klik tombol dibawah ini untuk melihat laporan ATEC bulanan perkembangan ananda tercinta.</p>
+								<a href="/atec/report" class="btn btn-primary">Laporan Atec</a>
+							</div>
+						</div>          
+					</div>
 				</div>
-			</div>
+			</div>    
 		</div>
 	</main>
 	<%- include("../partials/footer") -%>
