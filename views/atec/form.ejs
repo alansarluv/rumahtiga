@@ -1,0 +1,57 @@
+<%- include("../partials/header.ejs") -%>
+</head>
+<body>
+	<%- include('../partials/navigation.ejs') %>
+	<main>
+		<div class="container-fluid mt-100">
+      <% if(!kids) { %>
+        <div class="row">
+          <!-- <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Nama anak</h5>
+                <p class="card-text">Klik tombol dibawah ini untuk mulai mengisi ATEC (laporan bulanan). Atau buat baru</p>
+                <a href="/atec/form" class="btn btn-primary">Mulai</a>
+              </div>
+            </div>          
+          </div> -->
+          <div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <form action="/atec/form-child" method="POST">
+                  <div class="form-group">
+                    <input type="text" class="form-control" id="child-name" name="nama" placeholder="Tulis nama anak" required>
+                  </div>
+                  <div class="form-group">
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="genderpria" name="jeniskelamin" value="laki" class="custom-control-input" required>
+                      <label class="custom-control-label" for="genderpria">Laki laki</label>
+                    </div>
+                    <div class="custom-control custom-radio custom-control-inline">
+                      <input type="radio" id="genderwanita" name="jeniskelamin" value="perempuan" class="custom-control-input" required>
+                      <label class="custom-control-label" for="genderwanita">Perempuan</label>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <input type="date" class="form-control" name="birthday" data-link="calculate-age" required>
+                  </div>
+                  <div class="form-group">
+                    <p>Umur : <span class="jc-auto-age" data-target="calculate-age">-</span> tahun</p>
+                  </div>
+                  <div class="form-group">
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                  </div>
+                </form>              
+              </div>
+            </div>          
+          </div>
+        </div>
+      <% } else { %>
+        <h1>  heh</h1>
+      <% } %>
+		</div>    
+
+	</main>
+	<%- include("../partials/footer") -%>
+	<%- include("../partials/end") -%>

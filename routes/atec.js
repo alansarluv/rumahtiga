@@ -8,5 +8,10 @@ const isAuth = require('../middleware/is-auth');
 const router = express.Router();
 
 router.get('/atec', isAuth, atecController.getIndex);
+router.get('/atec/form', isAuth, atecController.getForm);
+
+// add validation here lately
+router.post('/atec/form-child', isAuth, atecController.postFormChild);
+
 
 module.exports = router;
