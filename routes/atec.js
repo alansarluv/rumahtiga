@@ -12,6 +12,7 @@ router.get('/atec/form', isAuth, atecController.getForm);
 
 // add validation here lately
 router.post('/atec/form-child', isAuth, atecController.postFormChild);
+router.post('/atec/form-report', isAuth, atecController.postFormReport);
 
 
 module.exports = router;

@@ -13,7 +13,7 @@ const atecSchema = new Schema({
     required: true
   },
   monthYear: {
-    type: Date,
+    type: String,
     required: true
   },
   bicaraTotal: {

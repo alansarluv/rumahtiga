@@ -126,7 +126,7 @@ const convertMonth = () => {
 }
 
 const checkMonthYearAvailable = (el) => {
-  const availableRportDate = document.querySelector('.availavle-report-date').value.split(',');
+  const availableRportDate = document.querySelector('.available-report-date').value.split(',');
   const atecMonth = document.querySelector("select[name='atecMonth']");
   const atecYear = document.querySelector("select[name='atecYear']");
   const monthYear = atecYear.value + atecMonth.value;
@@ -227,7 +227,7 @@ const selectAllFirst = () => {
 }
 
 document.addEventListener("DOMContentLoaded", function(event) {
-  const autoCheckEL = document.getElementsByClassName('jc-check-availavle-monthyear');
+  const autoCheckEL = document.getElementsByClassName('jc-check-available-monthyear');
   for(let el of autoCheckEL) {
     el.addEventListener("change", checkMonthYearAvailable);
   }
@@ -236,7 +236,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
   selectedRadio();
   autoSelectDate();
   nextFormValidate();
-  btnLoginRegister();
   convertMonth();
   sortAtecReportRow();
   confirmDeleteRow();
