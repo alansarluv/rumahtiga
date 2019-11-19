@@ -3,7 +3,7 @@ const Atec = require('../models/atec');
 
 exports.getIndex = (req, res, next) => {
   res.render('atec/index', {
-      pageTitle: 'Atec',
+      pageTitle: 'Atec - Dashboard',
       path: '/atec',
       userEmail: req.user.email
     });
@@ -20,7 +20,7 @@ exports.getForm = (req, res, next) => {
             userKids = user.kids;
           }
           return res.render('atec/form', {
-            pageTitle: 'Atec',
+            pageTitle: 'Atec - Form',
             path: '/atec/form',
             userEmail: req.user.email,
             kids: userKids,
@@ -132,10 +132,47 @@ exports.postFormReport = (req, res, next) => {
   return atec.save()
     .then(result => {
       return res.render('atec/flash', {
-        pageTitle: 'Atec',
+        pageTitle: 'Atec - Result',
         path: '/atec/flash',
         userEmail: req.user.email,
         flashDetail: result
       });
     });
+}
+
+//  ================== ====== ==================
+//  ================== Report ==================
+//  ================== ====== ==================
+
+exports.getReport = (req, res, next) => {
+  Atec.find(
+    {userId: req.user._id},
+    {
+      '_id': 1,
+      'monthYear': 1,
+      'bicaraTotal': 1,
+      'sosialTotal': 1,
+      'sensorikTotal': 1,
+      'umumTotal': 1,
+    })
+    .then(report => {
+      console.log(report);
+      console.log(req.user);
+      res.render('atec/report', {
+        pageTitle: 'Atec - Report',
+        path: '/atec/report',
+        userEmail: req.user.email,
+        listReport: report
+      });
+    })
+  }
+exports.postFormDelete = (req, res, next) => {
+  Atec
+    .deleteOne({_id: req.body.idAtec})
+    .then(() => {
+      console.log('DESTROYED REPORT')
+      res.redirect("/atec/report");
+    })
+    .catch(err => console.log(err));
+
 }

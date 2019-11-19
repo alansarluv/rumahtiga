@@ -184,19 +184,23 @@ const modalConfirmDeleteAtecReport = (el) => {
   console.log("mihaw");
   const $this = el.currentTarget;
   const monthYear = $this.getAttribute('data-todelete');
+  const idAtec = $this.getAttribute('data-id');
+  const csrfToken = $this.getAttribute('data-csrf');
+  
   const month = parseInt(monthYear.slice(4)) + 1;
   const year = monthYear.slice(0, 4);
   const elmPopUp = `
     <div class="modal-dialog-wrapper">
       <div class="modal-dialog" role="document">
         <div class="modal-content tc">
-          <div class="modal-body">
+          <div class="modal-body"> 
             <p>Anda yakin ingin menghapus laporan atec tahun ${year} bulan ${month} ?</p>
           </div>
           <div class="modal-footer">
-            <form action="/atec-report-delete" method="POST">
-              <input type="hidden" name="monthYear" value="${monthYear}">
+            <form action="/atec/form-delete" method="POST">
+              <input type="hidden" name="idAtec" value="${idAtec}">
               <button type="button" class="btn btn-ghost jc-cancel-modal">Batal</button>
+              <input type="hidden" name="_csrf" value="${csrfToken}">
               <button type="submit" class="btn btn-danger ml-4">Hapus</button>
             </form>
           </div>

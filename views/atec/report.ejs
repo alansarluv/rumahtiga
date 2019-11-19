@@ -1,0 +1,102 @@
+<%- include("../partials/header.ejs") -%>
+</head>
+<body>
+	<%- include('../partials/navigation.ejs') %>
+	<main>
+		<div class="container-fluid mt-100">
+      <div class="scrollable-box">
+        <div class="row mb-4">
+          <div class="col-12">
+            <a href="/welcome" class="btn btn-secondary">Kembali ke dashboard</a>
+          </div>
+        </div>
+        <% if(!listReport) { %>
+          <div class="row">
+            <div class="col-12 mb-4">
+              <p>Belum ada laporan</p>
+            </div>
+          </div>
+        <% } else { %>
+          <div class="row d-none d-md-flex">
+            <div class="col-12 text-center mb-4">
+              <div class="row">
+                <div class="col-12 col-md-2 text-left">
+                  <p>Tahun dan Bulan</p>
+                </div>
+                <div class="col-12 col-md">
+                  <p>Kemampuan Bicara</p>
+                </div>
+                <div class="col-12 col-md">
+                  <p>Kemampuan Sosial</p>
+                </div>
+                <div class="col-12 col-md">
+                  <p>Kemampuan Sensorik</p>
+                </div>
+                <div class="col-12 col-md">
+                  <p>Kemampuan Umum</p>
+                </div>
+                <div class="col-12 col-md-1">
+                  <p>Total</p>
+                </div>
+                <div class="col-12 col-md-2">
+                  <p></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <% listReport.forEach(el => { %>
+            <div class="row mb-3 atec-report-row">
+              <div class="col-12 col-md-12 text-md-center">
+                <div class="row">
+                  <div class="col-12 col-md-2 text-left mb-3 mb-md-0">
+                    <p class="mb-0 font-weight-bold" data-value-monthyear="<%= el.monthYear %>">
+                      <span><%= el.monthYear.substring(0, 4); %></span> - 
+                      <span class="jc-convert-month"><%= el.monthYear.substring(4, 6); %> </span>
+                    </p>
+                  </div>
+                  <div class="col-12 col-md">
+                    <p class="mb-0">
+                      <span class="d-md-none">Kemampuan bicara : </span>
+                      <%= el.bicaraTotal %>
+                    </p>
+                  </div>
+                  <div class="col-12 col-md">              
+                    <p class="mb-0">
+                      <span class="d-md-none">Kemampuan sosial : </span>
+                      <%= el.sosialTotal %>
+                    </p>
+                  </div>
+                  <div class="col-12 col-md">
+                    <p class="mb-0">
+                      <span class="d-md-none">Kemampuan sensorik : </span>
+                      <%= el.sensorikTotal %>
+                    </p>
+                  </div>
+                  <div class="col-12 col-md">
+                    <p class="mb-0">
+                      <span class="d-md-none">Kemampuan umum : </span>
+                      <%= el.umumTotal %>
+                    </p>
+                  </div>
+                  <div class="col-12 col-md-1">
+                    <p class="mb-0">
+                      <span class="d-md-none font-weight-bold">Total skor: </span>
+                      <%= parseInt(el.bicaraTotal) + parseInt(el.sosialTotal) + parseInt(el.sensorikTotal) + parseInt(el.umumTotal)  %>
+                    </p>
+                  </div>  
+                  <div class="col-12 col-md-2">
+                    <p class="action-button my-0 mr-md-5 float-right">
+                      <a class="btn btn-link btn-sm" href="/atec/detail/<%= el.monthYear %>">Detail</a>
+                      <button class="btn btn-danger btn-sm jc-delete-atecrow" type="button" data-csrf="<%= csrfToken %>" data-id="<%= el._id %>" data-todelete='<%= el.monthYear %>'>Hapus</button>
+                    </p>
+                  </div>  
+                </div>
+              </div>
+            </div>
+          <% }); %>
+        <% } %>
+      </div>
+    </div>
+	</main>
+<%- include("../partials/footer") -%>
+<%- include("../partials/end") -%>
