@@ -131,6 +131,11 @@ exports.postFormReport = (req, res, next) => {
   })
   return atec.save()
     .then(result => {
-      res.redirect('/atec');
+      return res.render('atec/flash', {
+        pageTitle: 'Atec',
+        path: '/atec/flash',
+        userEmail: req.user.email,
+        flashDetail: result
+      });
     });
 }

@@ -1,0 +1,37 @@
+<%- include("../partials/header.ejs") -%>
+</head>
+<body>
+	<%- include('../partials/navigation.ejs') %>
+	<main>
+		<div class="container-fluid mt-100">
+      <div class="scrollable-box">
+        <% if(!flashDetail) { %>
+          <div class="row">
+            <div class="col-12 mb-4">
+              <p>Belum ada laporan</p>
+            </div>
+          </div>
+        <% } else { %>
+          <div class="row">
+            <div class="col-12 mb-4">
+              <h2>Hasil laporan atec ananda :</h2>
+              <p>
+                <span class="jc-convert-month"><%= flashDetail.monthYear.substring(4, 6) %></span>, 
+                <span> <%= flashDetail.monthYear.substring(0, 4) %></span>
+              </p>
+              <p>Kemampuan bicara = <%= flashDetail.bicaraTotal %></p>
+              <p>Kemampuan sosial = <%= flashDetail.sosialTotal %></p>
+              <p>Kemampuan sensorik = <%= flashDetail.sensorikTotal %></p>
+              <p>Kemampuan umum = <%= flashDetail.umumTotal %></p>
+              <p>Kemampuan total = <%= parseInt(flashDetail.bicaraTotal) + parseInt(flashDetail.sosialTotal) + parseInt(flashDetail.sensorikTotal) + parseInt(flashDetail.umumTotal) %></p>
+            </div>
+          </div>
+          <div class="col-12">
+            <a href="/atec" class="btn btn-secondary">Back to atec dashboard</a>
+          </div>
+        <% } %>
+      </div>
+    </div>
+	</main>
+<%- include("../partials/footer") -%>
+<%- include("../partials/end") -%>
