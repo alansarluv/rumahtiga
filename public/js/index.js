@@ -181,7 +181,6 @@ const closeModalDialog = (el) => {
 }
 
 const modalConfirmDeleteAtecReport = (el) => {
-  console.log("mihaw");
   const $this = el.currentTarget;
   const monthYear = $this.getAttribute('data-todelete');
   const idAtec = $this.getAttribute('data-id');

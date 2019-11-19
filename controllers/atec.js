@@ -156,8 +156,6 @@ exports.getReport = (req, res, next) => {
       'umumTotal': 1,
     })
     .then(report => {
-      console.log(report);
-      console.log(req.user);
       res.render('atec/report', {
         pageTitle: 'Atec - Report',
         path: '/atec/report',
