@@ -164,6 +164,21 @@ exports.getReport = (req, res, next) => {
       });
     })
   }
+
+exports.getReportDetail = (req, res, next) => {
+  const atecId = req.params.atecId;
+  Atec
+    .findOne({_id: atecId})
+    .then(report => {
+      return res.render('atec/detail', {
+        pageTitle: 'Atec - Detail',
+        path: '/atec/detail',
+        userEmail: req.user.email,
+        flashDetail: report
+      });
+    })
+  }
+  
 exports.postFormDelete = (req, res, next) => {
   Atec
     .deleteOne({_id: req.body.idAtec})

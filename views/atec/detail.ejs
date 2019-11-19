@@ -1,0 +1,62 @@
+<%- include("../partials/header.ejs") -%>
+</head>
+<body>
+	<%- include('../partials/navigation.ejs') %>
+	<main>
+		<div class="container-fluid mt-100">
+      <div class="scrollable-box">
+        <% if(!flashDetail) { %>
+          <div class="row">
+            <div class="col-12 mb-4">
+              <p>Belum ada laporan</p>
+            </div>
+          </div>
+        <% } else { %>
+          <div class="row">
+            <div class="col-12 mb-4">
+              <h2 class="mb-2">
+                Detail Atec for <%= flashDetail.kidName %>
+              </h2>
+              <h5>
+                <span class="jc-convert-month"><%= flashDetail.monthYear.substring(4, 6) %></span>, 
+                <span> <%= flashDetail.monthYear.substring(0, 4) %></span>
+              </h5>
+              <div class="mt-5">
+                <h4>
+                  Kemampuan total = 
+                  <%= 
+                    parseInt(flashDetail.bicaraTotal) +
+                    parseInt(flashDetail.sosialTotal) +
+                    parseInt(flashDetail.sensorikTotal) +
+                    parseInt(flashDetail.umumTotal) 
+                  %>
+                </h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 px-0">
+            <div class="row">
+              <div class="col-3">
+                <h5>Kemampuan bicara = <%= flashDetail.bicaraTotal %></h5>
+                <p>Mengetahui namanya sendiri : <span><%= flashDetail.bicara1 %></span></p>                
+              </div>
+              <div class="col-3">
+                <h5>Kemampuan sosial = <%= flashDetail.sosialTotal %></h5>
+              </div>
+              <div class="col-3">
+                <h5>Kemampuan sensorik = <%= flashDetail.sensorikTotal %></h5>
+              </div>
+              <div class="col-3">
+                <h5>Kemampuan umum = <%= flashDetail.umumTotal %></h5>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 mt-5 pl-0">
+            <a href="/atec/report" class="btn btn-secondary">Back to atec report</a>
+          </div>
+        <% } %>
+      </div>
+    </div>
+	</main>
+<%- include("../partials/footer") -%>
+<%- include("../partials/end") -%>
