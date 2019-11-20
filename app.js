@@ -64,7 +64,12 @@ app.use(generalRoutes);
 
 app.use(generalController.get404);
 
-mongoose.connect(process.env.DB_DETAIL)
+mongoose
+  .connect(
+    process.env.DB_DETAIL, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true 
+  })
   .then(result => {
     app.listen(3000);
   })
