@@ -35,10 +35,19 @@
             </div>
           </div>
           <div class="col-12 px-0">
-            <div class="row">
+            <div class="row detail-form">
               <div class="col-3">
                 <h5>Kemampuan bicara = <%= flashDetail.bicaraTotal %></h5>
-                <p>Mengetahui namanya sendiri : <span><%= flashDetail.bicara1 %></span></p>                
+                <ul class="pl-0">
+                  <li>
+                    <span> Mengetahui namanya sendiri : </span>
+                    <span class="jc-convert-score" data-form="1"><%= flashDetail.bicara1 %></span>
+                  </li>
+                  <li>
+                    <span>Merespon pada "tidak" atau "stop" : </span>
+                    <span class="jc-convert-score" data-form="1"><%= flashDetail.bicara2 %></span>
+                  </li>
+                </ul>
               </div>
               <div class="col-3">
                 <h5>Kemampuan sosial = <%= flashDetail.sosialTotal %></h5>

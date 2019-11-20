@@ -44,6 +44,31 @@ const updateScore = (wrapperEl, formType) => {
   
 }
 
+const convertScore = () => {
+  const spanElm = document.getElementsByClassName('jc-convert-score');
+  if (spanElm.length){
+    for(let el of spanElm) {
+      const dataForm = el.getAttribute('data-form');
+      const val = el.textContent;
+      let res;
+      if (dataForm === "1") {
+        switch(val) {
+          case "tb": 
+            res = "Tidak benar (2)";
+            break;
+          case "ab":
+            res = "Agak benar (1)";
+            break;
+          case "sb":
+            res = "Sangat benar (0)";
+            break;
+        }
+      }
+      el.innerHTML = res;
+    }
+  }
+}
+
 const selectedRadio = () => {
   const listAtecFormRadio = document.querySelectorAll(".atec-form-style input[type='radio']");
   listAtecFormRadio.forEach(el => {
@@ -242,4 +267,5 @@ document.addEventListener("DOMContentLoaded", function(event) {
   convertMonth();
   sortAtecReportRow();
   confirmDeleteRow();
+  convertScore();
 });
