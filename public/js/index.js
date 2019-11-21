@@ -63,6 +63,45 @@ const convertScore = () => {
             res = "Sangat benar (0)";
             break;
         }
+      } else if (dataForm === "2") {
+        switch(val) {
+          case "tc": 
+            res = "Tidak cocok (0)";
+            break;
+          case "ac":
+            res = "Agak cocok (1)";
+            break;
+          case "sc":
+            res = "Sangat cocok (2)";
+            break;
+        }
+      } else if (dataForm === "3") {
+        switch(val) {
+          case "tc": 
+            res = "Tidak cocok (2)";
+            break;
+          case "ac":
+            res = "Agak cocok (1)";
+            break;
+          case "sc":
+            res = "Sangat cocok (0)";
+            break;
+        }
+      } else if (dataForm === "4") {
+        switch(val) {
+          case "tb": 
+            res = "Tidak bermasalah (0)";
+            break;
+          case "sb":
+            res = "Sedikit bermasalah (1)";
+            break;
+          case "cb":
+            res = "Cukup bermasalah (2)";
+            break;
+          case "vb":
+            res = "Sangat bermasalah (3)";
+            break;
+          }        
       }
       el.innerHTML = res;
     }

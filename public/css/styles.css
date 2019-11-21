@@ -256,6 +256,7 @@ footer:after {
   -ms-flex-align: center;
   align-items: center;  
   font-size: 12px;
+  border-bottom: 1px solid black;
 }
 
 .detail-form li .jc-convert-score{

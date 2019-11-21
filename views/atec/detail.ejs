@@ -36,7 +36,7 @@
           </div>
           <div class="col-12 px-0">
             <div class="row detail-form">
-              <div class="col-3">
+              <div class="col-lg-3 col-md-6 col-sm-12">
                 <h5>Kemampuan bicara = <%= flashDetail.bicaraTotal %></h5>
                 <ul class="pl-0">
                   <li>
@@ -47,16 +47,323 @@
                     <span>Merespon pada "tidak" atau "stop" : </span>
                     <span class="jc-convert-score" data-form="1"><%= flashDetail.bicara2 %></span>
                   </li>
+                  <li>
+                    <span>Dapat mengikuti perintah : </span>
+                    <span class="jc-convert-score" data-form="1"><%= flashDetail.bicara3 %></span>
+                  </li>
+                  <li>
+                    <span>Dapat menggunakan 1 kata (Tidak!, makan, air, dll) : </span>
+                    <span class="jc-convert-score" data-form="1"><%= flashDetail.bicara4 %></span>
+                  </li>
+                  <li>
+                    <span>Dapat menggunakan 2 kata sekaligus bersamaan (Tidak mau!, mau makan, minta itu, dll) : </span>
+                    <span class="jc-convert-score" data-form="1"><%= flashDetail.bicara5 %></span>
+                  </li>
+                  <li>
+                    <span>Dapat menggunakan 3 kata sekaligus (Mau minum susu, dll) : </span>
+                    <span class="jc-convert-score" data-form="1"><%= flashDetail.bicara6 %></span>
+                  </li>
+                  <li>
+                    <span>Mengetahui 10 kata atau lebih : </span>
+                    <span class="jc-convert-score" data-form="1"><%= flashDetail.bicara7 %></span>
+                  </li>
+                  <li>
+                    <span>Dapat membuat kalimat yang berisi 4 kata atau lebih : </span>
+                    <span class="jc-convert-score" data-form="1"><%= flashDetail.bicara8 %></span>
+                  </li>
+                  <li>
+                    <span>Mampu menjelaskan apa yang dia inginkan : </span>
+                    <span class="jc-convert-score" data-form="1"><%= flashDetail.bicara9 %></span>
+                  </li>
+                  <li>
+                    <span>Mampu menanyakan pertanyaan yang bermakna : </span>
+                    <span class="jc-convert-score" data-form="1"><%= flashDetail.bicara10 %></span>
+                  </li>
+                  <li>
+                    <span>Isi pembicaraan cenderung relevan atau bermakna : </span>
+                    <span class="jc-convert-score" data-form="1"><%= flashDetail.bicara11 %></span>
+                  </li>
+                  <li>
+                    <span>Sering menggunakan kalimat kalimat yang berurutan : </span>
+                    <span class="jc-convert-score" data-form="1"><%= flashDetail.bicara12 %></span>
+                  </li>
+                  <li>
+                    <span>Bisa mengikuti pembicaraan dengan cukup baik : </span>
+                    <span class="jc-convert-score" data-form="1"><%= flashDetail.bicara13 %></span>
+                  </li>
+                  <li>
+                    <span>Memiliki kemampuan bicara / berbahasa yang sesuai dengan seusianya : </span>
+                    <span class="jc-convert-score" data-form="1"><%= flashDetail.bicara14 %></span>
+                  </li>
+
                 </ul>
               </div>
-              <div class="col-3">
+              <div class="col-lg-3 col-md-6 col-sm-12">
                 <h5>Kemampuan sosial = <%= flashDetail.sosialTotal %></h5>
+                <ul class="pl-0">
+                  <li>
+                    <span> Terlihat seperti berada dalam tempurung (anda tdk dapat menjangkaunya) : </span>
+                    <span class="jc-convert-score" data-form="2"><%= flashDetail.sosial1 %></span>
+                  </li>
+                  <li>
+                    <span> Mengabaikan orang lain : </span>
+                    <span class="jc-convert-score" data-form="2"><%= flashDetail.sosial2 %></span>
+                  </li>
+                  <li>
+                    <span> Ketika dipanggil, hanya sedikit atau malah tidak memperhatikan : </span>
+                    <span class="jc-convert-score" data-form="2"><%= flashDetail.sosial3 %></span>
+                  </li>
+                  <li>
+                    <span> Tidak kooperatif dan menolak : </span>
+                    <span class="jc-convert-score" data-form="2"><%= flashDetail.sosial4 %></span>
+                  </li>
+                  <li>
+                    <span> Tidak ada kontak mata : </span>
+                    <span class="jc-convert-score" data-form="2"><%= flashDetail.sosial5 %></span>
+                  </li>
+                  <li>
+                    <span> Lebih suka menyendiri : </span>
+                    <span class="jc-convert-score" data-form="2"><%= flashDetail.sosial6 %></span>
+                  </li>
+                  <li>
+                    <span> Tidak menunjukan rasa kasih sayang : </span>
+                    <span class="jc-convert-score" data-form="2"><%= flashDetail.sosial7 %></span>
+                  </li>
+                  <li>
+                    <span> Tidak mampu menyapa orang tua : </span>
+                    <span class="jc-convert-score" data-form="2"><%= flashDetail.sosial8 %></span>
+                  </li>
+                  <li>
+                    <span> Menghindari kontak dengan orang lain : </span>
+                    <span class="jc-convert-score" data-form="2"><%= flashDetail.sosial9 %></span>
+                  </li>
+                  <li>
+                    <span> Tidak mampu menirukan orang lain : </span>
+                    <span class="jc-convert-score" data-form="2"><%= flashDetail.sosial10 %></span>
+                  </li>
+                  <li>
+                    <span> Tidak suka dipegang atau dipeluk : </span>
+                    <span class="jc-convert-score" data-form="2"><%= flashDetail.sosial11 %></span>
+                  </li>
+                  <li>
+                    <span> Tidak mau berbagi atau menunjukan : </span>
+                    <span class="jc-convert-score" data-form="2"><%= flashDetail.sosial12 %></span>
+                  </li>
+                  <li>
+                    <span> Tidak bisa melambaikan tangan (da... dah...) : </span>
+                    <span class="jc-convert-score" data-form="2"><%= flashDetail.sosial13 %></span>
+                  </li>
+                  <li>
+                    <span> Sering tidak setuju / menolak : </span>
+                    <span class="jc-convert-score" data-form="2"><%= flashDetail.sosial14 %></span>
+                  </li>
+                  <li>
+                    <span> Tantrum, marah marah : </span>
+                    <span class="jc-convert-score" data-form="2"><%= flashDetail.sosial15 %></span>
+                  </li>
+                  <li>
+                    <span> Tidak mempunyai teman : </span>
+                    <span class="jc-convert-score" data-form="2"><%= flashDetail.sosial16 %></span>
+                  </li>
+                  <li>
+                    <span> Jarang tersenyum : </span>
+                    <span class="jc-convert-score" data-form="2"><%= flashDetail.sosial17 %></span>
+                  </li>
+                  <li>
+                    <span> Tidak peka terhadap perasaan orang lain : </span>
+                    <span class="jc-convert-score" data-form="2"><%= flashDetail.sosial18 %></span>
+                  </li>
+                  <li>
+                    <span> Acuh tak acuh ketika disukai orang lain : </span>
+                    <span class="jc-convert-score" data-form="2"><%= flashDetail.sosial19 %></span>
+                  </li>
+                  <li>
+                    <span> Acuh tak acuh ketika dipanggil pergi oleh orang tuanya : </span>
+                    <span class="jc-convert-score" data-form="2"><%= flashDetail.sosial20 %></span>
+                  </li>
+                </ul>
               </div>
-              <div class="col-3">
+              <div class="col-lg-3 col-md-6 col-sm-12">
                 <h5>Kemampuan sensorik = <%= flashDetail.sensorikTotal %></h5>
+                <ul class="pl-0">
+                  <li>
+                    <span> Merespon saat dipanggil namanya : </span>
+                    <span class="jc-convert-score" data-form="3"><%= flashDetail.sensorik1 %></span>
+                  </li>
+                  <li>
+                    <span> Merespon saat dipuji : </span>
+                    <span class="jc-convert-score" data-form="3"><%= flashDetail.sensorik2 %></span>
+                  </li>
+                  <li>
+                    <span> Melihat pada orang dan binatang : </span>
+                    <span class="jc-convert-score" data-form="3"><%= flashDetail.sensorik3 %></span>
+                  </li>
+                  <li>
+                    <span> Melihat pada gambar (dan TV) : </span>
+                    <span class="jc-convert-score" data-form="3"><%= flashDetail.sensorik4 %></span>
+                  </li>
+                  <li>
+                    <span> Menggambar, mewarnai, dan melakukan kesenian : </span>
+                    <span class="jc-convert-score" data-form="3"><%= flashDetail.sensorik5 %></span>
+                  </li>
+                  <li>
+                    <span> Bermain dengan mainannya secara sesuai : </span>
+                    <span class="jc-convert-score" data-form="3"><%= flashDetail.sensorik6 %></span>
+                  </li>
+                  <li>
+                    <span> Menggunakan ekspresi wajah yang sesuai : </span>
+                    <span class="jc-convert-score" data-form="3"><%= flashDetail.sensorik7 %></span>
+                  </li>
+                  <li>
+                    <span> Memahami cerita yang ditayangkan di TV : </span>
+                    <span class="jc-convert-score" data-form="3"><%= flashDetail.sensorik8 %></span>
+                  </li>
+                  <li>
+                    <span> Memahami penjelasan : </span>
+                    <span class="jc-convert-score" data-form="3"><%= flashDetail.sensorik9 %></span>
+                  </li>
+                  <li>
+                    <span> Sadar akan lingkungannya : </span>
+                    <span class="jc-convert-score" data-form="3"><%= flashDetail.sensorik10 %></span>
+                  </li>
+                  <li>
+                    <span> Sadar akan bahaya : </span>
+                    <span class="jc-convert-score" data-form="3"><%= flashDetail.sensorik11 %></span>
+                  </li>
+                  <li>
+                    <span> Mampu berimajinasi : </span>
+                    <span class="jc-convert-score" data-form="3"><%= flashDetail.sensorik12 %></span>
+                  </li>
+                  <li>
+                    <span> Memulai aktivitas : </span>
+                    <span class="jc-convert-score" data-form="3"><%= flashDetail.sensorik13 %></span>
+                  </li>
+                  <li>
+                    <span> Mampu berpakaian sendiri : </span>
+                    <span class="jc-convert-score" data-form="3"><%= flashDetail.sensorik14 %></span>
+                  </li>
+                  <li>
+                    <span> Memiliki rasa penasaran dan ketertarikan : </span>
+                    <span class="jc-convert-score" data-form="3"><%= flashDetail.sensorik15 %></span>
+                  </li>
+                  <li>
+                    <span> Suka tantangan, senang mengeksplorasi : </span>
+                    <span class="jc-convert-score" data-form="3"><%= flashDetail.sensorik16 %></span>
+                  </li>
+                  <li>
+                    <span> Tampak selaras, tidak tampak kosong : </span>
+                    <span class="jc-convert-score" data-form="3"><%= flashDetail.sensorik17 %></span>
+                  </li>
+                  <li>
+                    <span> Mampu mengikuti pandangan ke arah semua orang memandang : </span>
+                    <span class="jc-convert-score" data-form="3"><%= flashDetail.sensorik18 %></span>
+                  </li>
+                </ul>
               </div>
-              <div class="col-3">
+              <div class="col-lg-3 col-md-6 col-sm-12">
                 <h5>Kemampuan umum = <%= flashDetail.umumTotal %></h5>
+                <ul class="pl-0">
+                  <li>
+                    <span> Mengompol saat tidur : </span>
+                    <span class="jc-convert-score" data-form="4"><%= flashDetail.umum1 %></span>
+                  </li>
+                  <li>
+                    <span> Mengompol di celana / popok : </span>
+                    <span class="jc-convert-score" data-form="4"><%= flashDetail.umum2 %></span>
+                  </li>
+                  <li>
+                    <span> Buang air besar di celana / popok : </span>
+                    <span class="jc-convert-score" data-form="4"><%= flashDetail.umum3 %></span>
+                  </li>
+                  <li>
+                    <span> Diare : </span>
+                    <span class="jc-convert-score" data-form="4"><%= flashDetail.umum4 %></span>
+                  </li>
+                  <li>
+                    <span> Konstipasi / sembelit : </span>
+                    <span class="jc-convert-score" data-form="4"><%= flashDetail.umum5 %></span>
+                  </li>
+                  <li>
+                    <span> Gangguan tidur : </span>
+                    <span class="jc-convert-score" data-form="4"><%= flashDetail.umum6 %></span>
+                  </li>
+                  <li>
+                    <span> Makan terlalu banyak / terlalu sedikit : </span>
+                    <span class="jc-convert-score" data-form="4"><%= flashDetail.umum7 %></span>
+                  </li>
+                  <li>
+                    <span> Pilihan makanan yang diinginkan sangat terbatas : </span>
+                    <span class="jc-convert-score" data-form="4"><%= flashDetail.umum8 %></span>
+                  </li>
+                  <li>
+                    <span> Hiperaktif : </span>
+                    <span class="jc-convert-score" data-form="4"><%= flashDetail.umum9 %></span>
+                  </li>
+                  <li>
+                    <span> Letargi, lemah lesu : </span>
+                    <span class="jc-convert-score" data-form="4"><%= flashDetail.umum10 %></span>
+                  </li>
+                  <li>
+                    <span> Memukul atau melukai diri sendiri : </span>
+                    <span class="jc-convert-score" data-form="4"><%= flashDetail.umum11 %></span>
+                  </li>
+                  <li>
+                    <span> Memukul atau melukai orang lain : </span>
+                    <span class="jc-convert-score" data-form="4"><%= flashDetail.umum12 %></span>
+                  </li>
+                  <li>
+                    <span> Destruktif : </span>
+                    <span class="jc-convert-score" data-form="4"><%= flashDetail.umum13 %></span>
+                  </li>
+                  <li>
+                    <span> Sensitif terhadap suara : </span>
+                    <span class="jc-convert-score" data-form="4"><%= flashDetail.umum14 %></span>
+                  </li>
+                  <li>
+                    <span> Cemas / penuh ketakutan : </span>
+                    <span class="jc-convert-score" data-form="4"><%= flashDetail.umum15 %></span>
+                  </li>
+                  <li>
+                    <span> Tidak senang / mudah rewel / menangis : </span>
+                    <span class="jc-convert-score" data-form="4"><%= flashDetail.umum16 %></span>
+                  </li>
+                  <li>
+                    <span> Kejang : </span>
+                    <span class="jc-convert-score" data-form="4"><%= flashDetail.umum17 %></span>
+                  </li>
+                  <li>
+                    <span> Bicara secara obsesif : </span>
+                    <span class="jc-convert-score" data-form="4"><%= flashDetail.umum18 %></span>
+                  </li>
+                  <li>
+                    <span> Kaku terhadap rutinitas : </span>
+                    <span class="jc-convert-score" data-form="4"><%= flashDetail.umum19 %></span>
+                  </li>
+                  <li>
+                    <span> Berteriak / menjerit-jerit : </span>
+                    <span class="jc-convert-score" data-form="4"><%= flashDetail.umum20 %></span>
+                  </li>
+                  <li>
+                    <span> Menuntut hal atau cara yang sama berulang-ulang : </span>
+                    <span class="jc-convert-score" data-form="4"><%= flashDetail.umum21 %></span>
+                  </li>
+                  <li>
+                    <span> Sering gelisah / agitasi : </span>
+                    <span class="jc-convert-score" data-form="4"><%= flashDetail.umum22 %></span>
+                  </li>
+                  <li>
+                    <span> Tidak peka terhadap nyeri : </span>
+                    <span class="jc-convert-score" data-form="4"><%= flashDetail.umum23 %></span>
+                  </li>
+                  <li>
+                    <span> Terfokus atau sulit dialihkan dari objek atau topik tertentu : </span>
+                    <span class="jc-convert-score" data-form="4"><%= flashDetail.umum24 %></span>
+                  </li>
+                  <li>
+                    <span> Gerakan repetitive (stimming, flapping, atau menggoyang-goyangkan bagian badan) : </span>
+                    <span class="jc-convert-score" data-form="4"><%= flashDetail.umum25 %></span>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
