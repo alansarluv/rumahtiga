@@ -24,6 +24,7 @@ app.set('view engine', 'ejs');
 app.set('views', 'views');
 
 const atecRoutes = require('./routes/atec');
+const weeklynoteRoutes = require('./routes/weeklynote');
 const authRoutes = require('./routes/auth');
 const generalRoutes = require('./routes/general');
 
@@ -59,6 +60,7 @@ app.use((req, res, next) => {
 })
 
 app.use(atecRoutes);
+app.use(weeklynoteRoutes);
 app.use(authRoutes);
 app.use(generalRoutes);
 
