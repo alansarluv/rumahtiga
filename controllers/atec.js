@@ -10,7 +10,9 @@ exports.getIndex = (req, res, next) => {
   }
 
 exports.getForm = (req, res, next) => {
-  Atec.find({userId: req.user._id})
+  Atec.find(
+    {userId: req.user._id},
+    {'monthYear': 1})
     .then(report => {
       const listReport = report;
       User.findOne({_id: req.user._id})
