@@ -190,11 +190,11 @@ const convertMonth = () => {
 }
 
 const checkMonthYearAvailable = (el) => {
-  const availableRportDate = document.querySelector('.available-report-date').value.split(',');
+  const availableReportDate = document.querySelector('.available-report-date').value.split(',');
   const atecMonth = document.querySelector("select[name='atecMonth']");
   const atecYear = document.querySelector("select[name='atecYear']");
   const monthYear = atecYear.value + atecMonth.value;
-  if (availableRportDate.includes(monthYear)) {
+  if (availableReportDate.includes(monthYear)) {
     atecMonth.classList.add("is-error");
     if (!atecMonth.parentElement.querySelector('.error-message')){
       let newElm = document.createElement('span');
@@ -205,6 +205,31 @@ const checkMonthYearAvailable = (el) => {
   } else {
     atecMonth.classList.remove("is-error");
     const errMessage = atecMonth.parentElement.querySelector('.error-message');
+    if (errMessage) errMessage.remove();
+  }
+}
+
+const checkMonthYearWeekAvailable = (el) => {
+  const availableReportDate = document.querySelector('.available-weeklynote-date').value.split(',');
+  const weeklyYear = document.querySelector("select[name='yearWeeklynote']");
+  const weeklyMonth = document.querySelector("select[name='monthWeeklynote']");
+  const weeklyWeek = document.querySelector("select[name='weekWeeklynote']");
+  const monthYear = weeklyYear.value + weeklyMonth.value + weeklyWeek.value;
+  if (availableReportDate.includes(monthYear)) {
+    weeklyMonth.classList.add("is-error");
+    weeklyYear.classList.add("is-error");
+    weeklyWeek.classList.add("is-error");
+    if (!weeklyMonth.parentElement.querySelector('.error-message')){
+      let newElm = document.createElement('span');
+      newElm.appendChild(document.createTextNode("Atec pada bulan dan minggu ini sudah ada, silahkan diganti dengan bulan atau minggu lain"));
+      newElm.classList.add("error-message");
+      weeklyMonth.parentElement.appendChild(newElm);
+    }
+  } else {
+    weeklyMonth.classList.remove("is-error");
+    weeklyYear.classList.remove("is-error");
+    weeklyWeek.classList.remove("is-error");
+    const errMessage = weeklyMonth.parentElement.querySelector('.error-message');
     if (errMessage) errMessage.remove();
   }
 }
@@ -314,6 +339,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
   for(let el of autoCheckEL) {
     el.addEventListener("change", checkMonthYearAvailable);
   }
+  const autoCheckELWeekly = document.getElementsByClassName('jc-check-available-monthyearweek');
+  for(let el of autoCheckELWeekly) {
+    el.addEventListener("change", checkMonthYearWeekAvailable);
+  }
+
+
 
   calculateAge();
   selectedRadio();

@@ -57,7 +57,7 @@
                                 });
                               }
                             %>
-                            <input type="hidden" class="available-weeklynote-date" value="<%= //listReportMonthYear %>">
+                            <input type="hidden" class="available-weeklynote-date" value="<%= listReportMonthYear %>">
                           </div>
                         </div>
                       </div>
@@ -65,7 +65,7 @@
                     <div class="row">
                       <div class="col-lg-4 col-sm-12">
                         <label for="monthWeeklynote">Bulan :</label>
-                        <select id="monthWeeklynote" name="monthWeeklynote" class="form-control jc-auto-select" data-type-auto="month">
+                        <select id="monthWeeklynote" name="monthWeeklynote" class="form-control jc-auto-select jc-check-available-monthyearweek" data-type-auto="month">
                           <option value="0">Januari</option>
                           <option value="1">Februari</option>
                           <option value="2">Maret</option>
@@ -82,7 +82,7 @@
                       </div>
                       <div class="col-lg-4 col-sm-12">
                         <label for="yearWeeklynote">Tahun :</label>
-                        <select id="yearWeeklynote" name="yearWeeklynote" class="form-control jc-auto-select" data-type-auto="year">
+                        <select id="yearWeeklynote" name="yearWeeklynote" class="form-control jc-auto-select jc-check-available-monthyearweek" data-type-auto="year">
                           <option value="2021">2021</option>
                           <option value="2020">2020</option>
                           <option value="2019">2019</option>
@@ -93,7 +93,7 @@
                       </div>
                       <div class="col-lg-4 col-sm-12">
                         <label for="weekWeeklynote">Minggu ke :</label>
-                        <select id="weekWeeklynote" name="weekWeeklynote" class="form-control">
+                        <select id="weekWeeklynote" name="weekWeeklynote" class="form-control jc-check-available-monthyearweek">
                           <option value="0">1</option>
                           <option value="1">2</option>
                           <option value="2">3</option>
