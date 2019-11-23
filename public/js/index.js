@@ -292,9 +292,11 @@ const btnAddList = () => {
       const wrapperList = this.closest('.box-wrapper').querySelector('ul.wrapper-list');
       const inputNewList = this.closest('.box-footer').querySelector('input.new-list');
       const newList = inputNewList.value;
-      const elmAppend = `<li><input type ="hidden" name="notes[]" value="${newList}"> ${newList} </li>`;
-      wrapperList.insertAdjacentHTML('beforeend', elmAppend);
-      inputNewList.value = '';
+      if (newList.length){
+        const elmAppend = `<li><input type ="hidden" name="notes" value="${newList}"> ${newList} </li>`;
+        wrapperList.insertAdjacentHTML('beforeend', elmAppend);
+        inputNewList.value = '';
+      }
     })
   }
 }

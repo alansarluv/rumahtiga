@@ -8,5 +8,6 @@ const isAuth = require('../middleware/is-auth');
 const router = express.Router();
 
 router.get('/weekly-note/form', isAuth, weeklynoteController.getForm);
+router.post('/weekly-note/form', isAuth, weeklynoteController.postForm);
 
 module.exports = router;

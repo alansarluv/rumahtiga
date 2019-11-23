@@ -1,0 +1,36 @@
+<%- include("../partials/header.ejs") -%>
+</head>
+<body>
+	<%- include('../partials/navigation.ejs') %>
+	<main>
+		<div class="container-fluid mt-100">
+      <div class="scrollable-box">
+        <% if(!weeklynote) { %>
+          <div class="row">
+            <div class="col-12 mb-4">
+              <p>Belum ada catatan</p>
+            </div>
+          </div>
+        <% } else { %>
+          <div class="row">
+            <div class="col-12 mb-4">
+              <h2>Hasil laporan perkembangan ananda :</h2>
+              <p>
+                <span class="jc-convert-month"><%= weeklynote.monthYear.substring(4, 6) %></span>, 
+                <span> <%= weeklynote.monthYear.substring(0, 4) %></span> -
+                <span class="jc-convert-week"> (Minggu ke - <%= parseInt(weeklynote.monthYear.substring(6, 7)) + 1 %> )</span>
+              </p>
+              <% weeklynote.notes.forEach(el => { %>
+                <p><%= el %></p>
+              <% }); %>
+            </div>
+          </div>
+          <div class="col-12 pl-0">
+            <a href="/atec" class="btn btn-secondary">Back to dashboard</a>
+          </div>
+        <% } %>
+      </div>
+    </div>
+	</main>
+<%- include("../partials/footer") -%>
+<%- include("../partials/end") -%>

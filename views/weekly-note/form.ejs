@@ -36,13 +36,14 @@
                   </form>
                 </div>
               <% } else { %>
-                <form action="/weekly-note/form">
+                <form action="/weekly-note/form" method="POST">
                   <div class="box-header">
                     <div class="row mb-4 justify-content-md-center">
                       <div class="col-lg-6 col-sm-12">
                         <div class="card">
                           <div class="card-body">
                             <p>Nama : <%= kids[0].name %></p>
+                            <input type="hidden" name="kidName" value="<%= kids[0].name %>">
                             <p>Jenis kelamin : <%= kids[0].gender %></p>
                             <%
                               const birthdayString = kids[0].birthday.getDate() + ' - ' + (kids[0].birthday.getMonth() + 1) + ' - ' + kids[0].birthday.getFullYear();
@@ -81,7 +82,7 @@
                       </div>
                       <div class="col-lg-4 col-sm-12">
                         <label for="yearWeeklynote">Tahun :</label>
-                        <select name="atecYear" class="form-control jc-auto-select" data-type-auto="year">
+                        <select id="yearWeeklynote" name="yearWeeklynote" class="form-control jc-auto-select" data-type-auto="year">
                           <option value="2021">2021</option>
                           <option value="2020">2020</option>
                           <option value="2019">2019</option>
@@ -117,6 +118,7 @@
                       </div>
                     </div>
                   </div>
+                  <input type="hidden" name="_csrf" value="<%= csrfToken %>">
                   <button type="submit" class="btn btn-block btn-primary mt-4">Simpan</button>
                 </form>
               <% } %>
