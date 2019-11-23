@@ -4,9 +4,123 @@
 	<%- include('../partials/navigation.ejs') %>
 	<main>
 		<div class="container-fluid mt-100">
-      <div class="row">
-        <div class="col-12 mb-4">
-          <p>Belum ada laporan</p>
+      <div class="row justify-content-md-center align-items-center">
+        <div class="col col-lg-5 col-md-8 col-sm-12">
+          <div class="box-wrapper">
+              <% if(!kids) { %>
+                <div class="box-content p-3">
+                  <form action="/atec/form-child" method="POST">
+                    <div class="form-group">
+                      <input type="text" class="form-control" id="child-name" name="name" placeholder="Tulis nama anak" required>
+                    </div>
+                    <div class="form-group">
+                      <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="genderpria" name="gender" value="laki" class="custom-control-input" required>
+                        <label class="custom-control-label" for="genderpria">Laki laki</label>
+                      </div>
+                      <div class="custom-control custom-radio custom-control-inline">
+                        <input type="radio" id="genderwanita" name="gender" value="perempuan" class="custom-control-input" required>
+                        <label class="custom-control-label" for="genderwanita">Perempuan</label>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <input type="date" class="form-control" name="birthday" data-link="calculate-age" required>
+                    </div>
+                    <div class="form-group">
+                      <p>Umur : <span class="jc-auto-age" data-target="calculate-age">-</span> tahun</p>
+                    </div>
+                    <div class="form-group">
+                      <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                      <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                    </div>
+                  </form>
+                </div>
+              <% } else { %>
+                <form action="/weekly-note/form">
+                  <div class="box-header">
+                    <div class="row mb-4 justify-content-md-center">
+                      <div class="col-lg-6 col-sm-12">
+                        <div class="card">
+                          <div class="card-body">
+                            <p>Nama : <%= kids[0].name %></p>
+                            <p>Jenis kelamin : <%= kids[0].gender %></p>
+                            <%
+                              const birthdayString = kids[0].birthday.getDate() + ' - ' + (kids[0].birthday.getMonth() + 1) + ' - ' + kids[0].birthday.getFullYear();
+                            %>
+                            <p class="mb-0">Birth day : <%= birthdayString %></p>
+                            <%
+                              var listReportMonthYear = [];
+                              if (listreport) {
+                                listreport.forEach(el => {
+                                  listReportMonthYear.push(el.monthYear);
+                                });
+                              }
+                            %>
+                            <input type="hidden" class="available-weeklynote-date" value="<%= //listReportMonthYear %>">
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-lg-4 col-sm-12">
+                        <label for="monthWeeklynote">Bulan :</label>
+                        <select id="monthWeeklynote" name="monthWeeklynote" class="form-control jc-auto-select" data-type-auto="month">
+                          <option value="0">Januari</option>
+                          <option value="1">Februari</option>
+                          <option value="2">Maret</option>
+                          <option value="3">April</option>
+                          <option value="4">Mei</option>
+                          <option value="5">Juni</option>
+                          <option value="6">Juli</option>
+                          <option value="7">Agustus</option>
+                          <option value="8">September</option>
+                          <option value="9">Oktober</option>
+                          <option value="10">November</option>
+                          <option value="11">Desember</option>
+                        </select>
+                      </div>
+                      <div class="col-lg-4 col-sm-12">
+                        <label for="yearWeeklynote">Tahun :</label>
+                        <select name="atecYear" class="form-control jc-auto-select" data-type-auto="year">
+                          <option value="2021">2021</option>
+                          <option value="2020">2020</option>
+                          <option value="2019">2019</option>
+                          <option value="2018">2018</option>
+                          <option value="2017">2017</option>
+                          <option value="2016">2016</option>
+                        </select>
+                      </div>
+                      <div class="col-lg-4 col-sm-12">
+                        <label for="weekWeeklynote">Minggu ke :</label>
+                        <select id="weekWeeklynote" name="weekWeeklynote" class="form-control">
+                          <option value="0">1</option>
+                          <option value="1">2</option>
+                          <option value="2">3</option>
+                          <option value="3">4</option>
+                          <option value="4">5</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="box-content">
+                    <ul class="wrapper-list">
+                      <p class="text-center">Tuliskan perkembangan mingguan ananda di bawah ini dan klik tombol tambah. Setelah selesai menuliskan semua catatan, simpan catatan tersebut dengan cara klik tombol simpan</p>
+                    </ul>
+                  </div>
+                  <div class="box-footer">
+                    <div class="row">
+                      <div class="col-sm-10">
+                        <input type="text" class="form-control new-list" name="newNote" placeholder="Tulis disini... " autocomplete="off">
+                      </div>
+                      <div class="col-sm-2 text-right pl-0">
+                        <button type="button" class="btn-block btn-success btn-sm btn jc-btn-add-list"> Tambah </button>
+                      </div>
+                    </div>
+                  </div>
+                  <button type="submit" class="btn btn-block btn-primary mt-4">Simpan</button>
+                </form>
+              <% } %>
+          </div>
         </div>
       </div>
     </div>
