@@ -32,13 +32,25 @@ exports.postForm = (req, res, next) => {
     monthYear: req.body.yearWeeklynote + req.body.monthWeeklynote + req.body.weekWeeklynote,
     notes: req.body.notes
   })
-  return weeklynote.save()
-    .then(result => {
-      return res.render('weekly-note/flash', {
-        pageTitle: 'Weekly note - Result',
-        path: '/weekly-note/flash',
-        userEmail: req.user.email,
-        weeklynote: result
-      });
-    });
+  Weeklynote.find({
+    userId: req.user._id,
+    monthYear: weeklynote.monthYear
+  })
+  .then(result => {
+    if (!result.length) {
+      return weeklynote.save()
+        .then(result => {
+          return res.render('weekly-note/flash', {
+            pageTitle: 'Weekly note - Result',
+            path: '/weekly-note/flash',
+            userEmail: req.user.email,
+            weeklynote: result
+          });
+        });
+    } else {
+      console.log("catatan pada tanggal tsb sudah ada")
+      res.redirect('/weekly-note/form');
+    }
+  })
+
 }

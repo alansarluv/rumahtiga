@@ -131,15 +131,28 @@ exports.postFormReport = (req, res, next) => {
     umum24: req.body.umum24,
     umum25: req.body.umum25
   })
-  return atec.save()
-    .then(result => {
-      return res.render('atec/flash', {
-        pageTitle: 'Atec - Result',
-        path: '/atec/flash',
-        userEmail: req.user.email,
-        flashDetail: result
-      });
-    });
+  Atec.find({
+    userId: req.user._id,
+    monthYear: atec.monthYear
+  })
+  .then(result => {
+    if (!result.length) {
+      return atec.save()
+        .then(result => {
+          return res.render('atec/flash', {
+            pageTitle: 'Atec - Result',
+            path: '/atec/flash',
+            userEmail: req.user.email,
+            flashDetail: result
+          });
+        });
+    } else {
+      console.log("atec pada tanggal tsb sudah ada")
+      res.redirect('/atec/form');
+    }
+  })
+
+
 }
 
 //  ================== ====== ==================

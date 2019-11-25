@@ -219,17 +219,17 @@ const checkMonthYearWeekAvailable = (el) => {
     weeklyMonth.classList.add("is-error");
     weeklyYear.classList.add("is-error");
     weeklyWeek.classList.add("is-error");
-    if (!weeklyMonth.parentElement.querySelector('.error-message')){
+    if (!weeklyMonth.closest('.row').querySelector('.error-message')){
       let newElm = document.createElement('span');
       newElm.appendChild(document.createTextNode("Atec pada bulan dan minggu ini sudah ada, silahkan diganti dengan bulan atau minggu lain"));
-      newElm.classList.add("error-message");
-      weeklyMonth.parentElement.appendChild(newElm);
+      newElm.classList.add("col-sm-12" ,"error-message", "mt-2");
+      weeklyMonth.closest('.row').appendChild(newElm);
     }
   } else {
     weeklyMonth.classList.remove("is-error");
     weeklyYear.classList.remove("is-error");
     weeklyWeek.classList.remove("is-error");
-    const errMessage = weeklyMonth.parentElement.querySelector('.error-message');
+    const errMessage = weeklyMonth.closest('.row').querySelector('.error-message');
     if (errMessage) errMessage.remove();
   }
 }
