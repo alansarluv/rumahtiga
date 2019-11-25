@@ -1,0 +1,39 @@
+<%- include("../partials/header.ejs") -%>
+</head>
+<body>
+	<%- include('../partials/navigation.ejs') %>
+	<main>
+		<div class="container-fluid mt-100">
+      <div class="scrollable-box row">
+        <div class="col-12">
+          <a href="/atec" class="btn btn-secondary">Kembali ke dashboard</a>
+        </div>
+        <% if(!listreport) { %>
+          <div class="col-sm-12">
+            <h3>Belum ada catatan</h3>
+          </div>
+          <% } else { %>
+            <% listreport.forEach(el => { %>
+              <div class="col-lg-4 col-sm-12 mt30">
+                <div class="card">
+                  <div class="card-body">
+                    <p class="mb-3 font-weight-bold text-center" data-value-monthyear="<%= el.monthYear %>">
+                      <span><%= el.monthYear.substring(0, 4); %></span> - 
+                      <span class="jc-convert-month"><%= el.monthYear.substring(4, 6); %> </span>
+                      <span>(Minggu ke - <%= parseInt(el.monthYear.substring(6, 7) ) +1 %>)</span>
+                    </p>
+                    <ul>
+                      <% el.notes.forEach(list => { %>
+                        <li> <%= list %> </li>
+                      <% }) %>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            <% }) %>
+        <% } %>
+      </div>
+    </div>
+	</main>
+<%- include("../partials/footer") -%>
+<%- include("../partials/end") -%>

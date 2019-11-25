@@ -54,3 +54,16 @@ exports.postForm = (req, res, next) => {
   })
 
 }
+
+exports.getReport = (req, res, next) => {
+  Weeklynote.find({userId: req.user._id})
+    .then(report => {
+      return res.render('weekly-note/report', {
+        pageTitle: 'Weekly note - Report',
+        path: '/weekly-note/report',
+        userEmail: req.user.email,
+        listreport: report
+      });
+    })
+    .catch(err => console.log(err));
+}

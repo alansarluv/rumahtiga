@@ -151,8 +151,6 @@ exports.postFormReport = (req, res, next) => {
       res.redirect('/atec/form');
     }
   })
-
-
 }
 
 //  ================== ====== ==================
