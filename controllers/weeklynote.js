@@ -56,7 +56,9 @@ exports.postForm = (req, res, next) => {
 }
 
 exports.getReport = (req, res, next) => {
-  Weeklynote.find({userId: req.user._id})
+  Weeklynote
+    .find({userId: req.user._id})
+    .sort({monthYear: 'desc'})
     .then(report => {
       return res.render('weekly-note/report', {
         pageTitle: 'Weekly note - Report',

@@ -45,11 +45,11 @@
             </div>
           </div>
           <% listReport.forEach(el => { %>
-            <div class="row mb-3 atec-report-row">
+            <div class="row mb-3">
               <div class="col-12 col-md-12 text-md-center">
                 <div class="row">
                   <div class="col-12 col-md-2 text-left mb-3 mb-md-0">
-                    <p class="mb-0 font-weight-bold" data-value-monthyear="<%= el.monthYear %>">
+                    <p class="mb-0 font-weight-bold">
                       <span><%= el.monthYear.substring(0, 4); %></span> - 
                       <span class="jc-convert-month"><%= el.monthYear.substring(4, 6); %> </span>
                     </p>

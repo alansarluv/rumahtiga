@@ -234,35 +234,6 @@ const checkMonthYearWeekAvailable = (el) => {
   }
 }
 
-const sortAtecReportRow = () => {
-  const listRow = Array.prototype.slice.call(document.querySelectorAll('.atec-report-row'));
-  const listVal = [];
-  listRow.map(row => {
-    const dataValueMonthYear = row.querySelector('p[data-value-monthyear]');
-    let val = dataValueMonthYear.getAttribute('data-value-monthyear');
-    if (val.substring(4,6).length === 1) {
-      val = val.substring(0,4) + "0" + val.substring(4,5);
-    };
-    listVal.push(val);
-  })
-  listVal.sort(function(a, b){return b - a});
-  listCloneRow = [];
-  listVal.forEach(el => {
-    if (el.substring(4,5) === "0"){
-      el = el.substring(0,4) + el.substring(5,6);
-    }
-    const elmRow = document.querySelector("p[data-value-monthyear='"+ el +"']");
-    const parentRow = elmRow.closest('.atec-report-row');
-    listCloneRow.push(parentRow.cloneNode(true));
-    parentRow.remove();
-  });
-
-  const scrollableBox = document.getElementsByClassName('scrollable-box')[0];
-  listCloneRow.forEach(el => {
-    scrollableBox.appendChild(el);
-  })
-}
-
 const closeModalDialog = (el) => {
   const elmModalActive = document.querySelector('.modal-dialog-wrapper');
   elmModalActive.remove();
@@ -351,7 +322,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
   autoSelectDate();
   nextFormValidate();
   convertMonth();
-  sortAtecReportRow();
   confirmDeleteRow();
   convertScore();
   btnAddList();

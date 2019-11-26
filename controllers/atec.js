@@ -168,6 +168,7 @@ exports.getReport = (req, res, next) => {
       'sensorikTotal': 1,
       'umumTotal': 1,
     })
+    .sort({monthYear: 'desc'})
     .then(report => {
       res.render('atec/report', {
         pageTitle: 'Atec - Report',
