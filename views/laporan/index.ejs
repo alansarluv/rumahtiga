@@ -1,0 +1,40 @@
+<%- include("../partials/header.ejs") -%>
+</head>
+<body>
+	<%- include('../partials/navigation.ejs') %>
+	<main>
+		<div class="container-fluid mt-100">
+			<div class="row">
+				<div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">Buat channel laporan (super admin only)</h5>
+							<p class="card-text">Silahkan klik tombol dibawah ini untuk membuat channel baru untuk laporan identitas, pembukuan, arisan dll.</p>
+							<a href="/laporan/new" class="btn btn-primary">Buat channel</a>
+						</div>
+					</div>          
+				</div>
+				<div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">Data warga</h5>
+							<p class="card-text">Silahkan klik tombol dibawah ini untuk mengisi dan melihat data warga.</p>
+							<a href="/laporan/data" class="btn btn-primary">Lihat data</a>
+						</div>
+					</div>          
+				</div>
+				<div class="col-lg-4 col-md-6 col-sm-12 mb-4">
+					<div class="card">
+						<div class="card-body">
+							<h5 class="card-title">Laporan keuangan</h5>
+							<p class="card-text">Silahkan klik tombol dibawah ini untuk melihat laporan keuangan setiap bulannya.</p>
+							<a href="/laporan/keuangan" class="btn btn-secondary disabled">Lihat laporan keuanganc</a>
+						</div>
+					</div>          
+				</div>
+			</div>
+		</div>    
+
+	</main>
+	<%- include("../partials/footer") -%>
+	<%- include("../partials/end") -%>
