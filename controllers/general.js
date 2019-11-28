@@ -12,3 +12,12 @@ exports.dashboard = (req, res, next) => {
     userEmail: null
   });
 }
+
+exports.noAccess = (req, res, next) => {
+  res.render('no-access', { 
+    pageTitle: 'No Access',
+    path: '/',
+    userEmail: req.user.email || null
+  });
+}
+
